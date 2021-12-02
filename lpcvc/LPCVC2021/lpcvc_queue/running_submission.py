@@ -74,6 +74,10 @@ def run_on_video(video):
         get_file_from_pi(program_output, destination)
         get_power_results()
 
+def run_sim_submission():
+    # pi_run_command()
+    return
+
 
 def finish_submission(submission, sub_file_name):
     os.rename(submission, SUBMISSION_DIR + "/" + sub_file_name + ".csv")

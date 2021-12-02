@@ -40,16 +40,16 @@ def start_queue(queue_path, sleep_time):
             # print('\u001b[1m\u001b[4mRunning submission ' + sub_file_name + '\u001b[0m')
             with open(submission, 'w') as scoreCSVFile:
                 score_fp = csv.writer(scoreCSVFile)
-                score_fp.writerow(["video_name", "accuracy", "energy", "error_status", "run_time", "performance_score"])
-                if setup_submission(sub_file_name):
+                score_fp.writerow(["video_name", "accuracy", "energy", "error_status", "run_time", "performance_score"]) # Adjust this
+                if setup_submission(sub_file_name): # Check this method
                     for video in videos:
-                        run_on_video(video)
-                        append_video_score(video, score_fp)
+                        run_on_video(video) # Check this method
+                        append_video_score(video, score_fp) # Check this method
                 else:
                     for video in videos:
-                        score_fp.writerow([video, 0, 0, 'CTE', 0, 0])
-            finish_submission(submission, sub_file_name)
-            report_score(sub_file_name)
+                        score_fp.writerow([video, 0, 0, 'CTE', 0, 0]) # Check this method
+            finish_submission(submission, sub_file_name)    # Check this method
+            report_score(sub_file_name) # Check this method
             if killer.kill_now:
                 exit()
 
